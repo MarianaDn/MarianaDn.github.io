@@ -1,0 +1,1197 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+.header {
+  width: 100%;
+  height: 700px;
+  background-color: #FFFFFF;
+  background-image: url("../images/Background.png");
+  background-size: cover;
+  background-position: center;
+  font-family: 'Montserrat';
+  color: #FFFFFF;
+}
+
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  width: 945px;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-right: 45px;
+}
+
+.logo__name h2 {
+  margin-top: 6px;
+  font-size: 20px;
+}
+
+.logo__entrance input {
+  width: 90px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0);
+  font-family: "Montserrat-Regular";
+  font-size: 14px;
+  border-radius: 40px;
+  color: #FFFFFF;
+}
+
+.logo__logIn {
+  border: none;
+}
+
+.logo__signUp_active {
+  border: 2px solid #FFFFFF;
+}
+
+.mainInformation {
+  width: 470px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 143px auto;
+  text-align: center;
+}
+
+.mainInformation__mainText {
+  font-size: 52px;
+  line-height: 66px;
+}
+
+.mainInformation__secondText {
+  font-family: "Roboto";
+  font-size: 24px;
+  margin-top: 29px;
+  margin-bottom: 33px;
+}
+
+.mainInformation__button {
+  width: 225px;
+  height: 40px;
+  background-color: #FF4E50;
+  font-family: "Montserrat";
+  font-size: 14px;
+  border: none;
+  border-radius: 40px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.howItWorks {
+  width: 940px;
+  height: 461px;
+  background-color: #FFFFFF;
+  margin: 93px auto;
+}
+
+.howItWorks__title, .meetPartner__title, .ideas__title, .interests__title {
+  font-family: "Montserrat";
+  font-size: 26px;
+  color: #444444;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.howItWorks__steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+}
+
+.howItWorks__firstStep, .howItWorks__secondStep, .howItWorks__thirdStep {
+  width: 300px;
+  height: 400px;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 19px 25px;
+  border-radius: 5px;
+  background-image: url("../images/Step 1 image.png");
+  background-size: cover;
+}
+
+.howItWorks__secondStep {
+  background-image: url("../images/Step 2 image.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.howItWorks__thirdStep {
+  background-image: url("../images/Step 3 image.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.howItWorks__titleStep {
+  width: 70px;
+  height: 20px;
+  background-color: #FF4E50;
+  font-family: "Montserrat-Regular";
+  font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.howItWorks__titleTextStep {
+  font-family: "Montserrat";
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 27px;
+}
+
+.howItWorks__mainTextStep {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #E3E3E3;
+  line-height: 14px;
+}
+
+.meetPartner {
+  width: 940px;
+  height: 461px;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.meetPartner__persons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
+}
+
+.meetPartner__hobby {
+  width: 40px;
+  height: 40px;
+  background-color: #FF4E50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  border: 5px solid #FFFFFF;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin: -35px -90px 0 0;
+}
+
+.meetPartner__name {
+  font-family: "Montserrat";
+  font-size: 14px;
+  color: #444444;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.meetPartner__aboutPerson {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+}
+
+.meetPartner__firstPerson, .meetPartner__secondPerson, .meetPartner__thirdPerson, .meetPartner__fourthPerson {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 221px;
+  margin-top: 5px;
+}
+
+.meetPartner__secondPerson div {
+  background-color: #19D4CA;
+}
+
+.meetPartner__thirdPerson div {
+  background-color: #FFA710;
+}
+
+.meetPartner__fourthPerson div {
+  background-color: #667DF3;
+}
+
+.meetPartner__firstPersonPhoto, .meetPartner__secondPersonPhoto, .meetPartner__thirdPersonPhoto, .meetPartner__fourthPersonPhoto {
+  width: 120px;
+  height: 120px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  background-image: url("../images/Bitmap1.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.meetPartner__secondPersonPhoto {
+  background-image: url("../images/Bitmap2.png");
+}
+
+.meetPartner__thirdPersonPhoto {
+  background-image: url("../images/Bitmap3.png");
+}
+
+.meetPartner__fourthPersonPhoto {
+  background-image: url("../images/Bitmap4.png");
+}
+
+.meetPartner__button {
+  width: 180px;
+  height: 40px;
+  background-color: #FFFFFF;
+  font-family: "Montserrat";
+  font-size: 14px;
+  display: block;
+  color: #FF4E50;
+  border: 2px solid #FF4E50;
+  border-radius: 40px;
+  margin: 40px auto;
+  cursor: pointer;
+}
+
+.ideas {
+  width: 940px;
+  height: 1031px;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.ideas__photoBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  font-family: "Montserrat";
+  font-size: 22px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #FFFFFF;
+}
+
+.ideas__sport, .ideas__health, .ideas__extreme, .ideas__games, .ideas__travel {
+  width: 300px;
+  height: 310px;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  background-image: url("../images/Sport.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.ideas__health {
+  background-image: url("../images/Health.png");
+}
+
+.ideas__extreme {
+  background-image: url("../images/Extreme.png");
+}
+
+.ideas__games {
+  background-image: url("../images/Games.png");
+}
+
+.ideas__culture, .ideas__relax {
+  width: 620px;
+  height: 310px;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: url("../images/Culture.png");
+}
+
+.ideas__relax {
+  background-image: url("../images/Relax.png");
+}
+
+.ideas__travel {
+  background-image: url("../images/Travelling.png");
+}
+
+.interests {
+  width: 482px;
+  height: 148px;
+  background-color: #FFFFFF;
+  margin: 95px auto;
+  margin-bottom: 110px;
+}
+
+.interests__title {
+  margin-bottom: 50px;
+}
+
+.interests__question {
+  font-family: "Roboto";
+  font-size: 18px;
+  text-align: center;
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.interests__textInput {
+  width: 299px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid #D4D4D4;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+  border-radius: 3px;
+  padding-left: 14px;
+}
+
+.interests__textInput::-webkit-input-placeholder {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #999999;
+}
+
+.interests__textInput:-ms-input-placeholder {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #999999;
+}
+
+.interests__textInput::-ms-input-placeholder {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #999999;
+}
+
+.interests__textInput::placeholder {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #999999;
+}
+
+.interests__button {
+  width: 172px;
+  height: 40px;
+  background-color: #FF4E50;
+  font-family: "Montserrat";
+  font-size: 14px;
+  color: #FFFFFF;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.footer {
+  border-top: 2px solid #FF4E50;
+  font-family: "Montserrat";
+  font-size: 14px;
+}
+
+.footerContent {
+  width: 945px;
+  height: 260px;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  margin: 0 auto;
+  padding-top: 38px;
+}
+
+.footerContent__logo {
+  font-family: "Montserrat-Regular";
+  font-size: 16px;
+  color: #FF4E50;
+}
+
+.footerContent__menuList {
+  font-family: "Roboto";
+  font-size: 14px;
+  line-height: 26px;
+  margin-top: 15px;
+}
+
+.footerContent__partners {
+  margin-right: 170px;
+}
+
+.footerContent__designBy {
+  font-family: "Montserrat";
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 12px;
+  color: #CCCCCC;
+  text-align: right;
+}
+
+.footerContent__designLogo {
+  margin-top: 7px;
+}
+
+ul a {
+  text-decoration: none;
+  color: #999999;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 680px;
+    padding-right: 0;
+  }
+  .howItWorks {
+    width: 748px;
+  }
+  .howItWorks__title, .meetPartner__title, .ideas__title, .interests__title {
+    font-size: 22px;
+  }
+  .howItWorks__firstStep, .howItWorks__secondStep, .howItWorks__thirdStep {
+    width: 236px;
+    padding: 20px;
+  }
+  .howItWorks__firstStep .howItWorks__titleStep, .howItWorks__secondStep .howItWorks__titleStep, .howItWorks__thirdStep .howItWorks__titleStep {
+    margin-bottom: 44px;
+  }
+  .howItWorks__firstStep .howItWorks__titleTextStep, .howItWorks__secondStep .howItWorks__titleTextStep, .howItWorks__thirdStep .howItWorks__titleTextStep {
+    margin-bottom: 28px;
+  }
+  .howItWorks__secondStep .howItWorks__titleStep {
+    margin-bottom: 15px;
+  }
+  .howItWorks__secondStep .howItWorks__titleTextStep {
+    margin-bottom: 10px;
+  }
+  .howItWorks__thirdStep .howItWorks__titleStep {
+    margin-bottom: 44px;
+  }
+  .howItWorks__thirdStep .howItWorks__titleTextStep {
+    margin-bottom: 30px;
+  }
+  .meetPartner {
+    width: 492px;
+    height: 605px;
+    margin-bottom: 95px;
+  }
+  .meetPartner__persons {
+    height: 470px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .meetPartner__firstPerson, .meetPartner__secondPerson, .meetPartner__thirdPerson, .meetPartner__fourthPerson {
+    width: 236px;
+  }
+  .meetPartner p {
+    width: 236px;
+  }
+  .ideas {
+    width: 100%;
+  }
+  .ideas__sport, .ideas__health, .ideas__extreme, .ideas__games, .ideas__travel {
+    width: 236px;
+  }
+  .ideas__sport a, .ideas__health a, .ideas__extreme a, .ideas__games a, .ideas__travel a {
+    width: 206px;
+    text-align: center;
+  }
+  .ideas__photoBlock {
+    width: 748px;
+    margin: 0 auto;
+  }
+  .ideas__culture, .ideas__relax {
+    width: 492px;
+  }
+  .ideas__travel {
+    background-position: left;
+  }
+  .footerContent {
+    width: 690px;
+  }
+  .footerContent__partners {
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .header {
+    height: 540px;
+  }
+  .logo {
+    width: 200px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding-top: 20px;
+  }
+  .logo__entrance {
+    margin-bottom: 97px;
+  }
+  .logo__name {
+    margin: 0 auto;
+  }
+  .mainInformation {
+    width: 281px;
+    margin: 26px auto;
+  }
+  .mainInformation__mainText {
+    width: 272px;
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 auto;
+  }
+  .mainInformation__secondText {
+    width: 280px;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 auto;
+  }
+  .mainInformation__button {
+    width: 280px;
+    margin-top: 15px;
+  }
+  .howItWorks {
+    width: 320px;
+    height: 780px;
+    margin: 35px auto;
+  }
+  .howItWorks__title, .meetPartner__title, .ideas__title, .interests__title {
+    margin-bottom: 15px;
+  }
+  .howItWorks__steps {
+    height: 735px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .howItWorks__firstStep, .howItWorks__secondStep, .howItWorks__thirdStep {
+    width: 300px;
+    height: 240px;
+    background-color: #FFFFFF;
+    background-image: url("../images/Step 1 image_min.png");
+    padding: 20px 30px 16px 20px;
+  }
+  .howItWorks__secondStep {
+    background-image: url("../images/Step 2 image_min.png");
+  }
+  .howItWorks__thirdStep {
+    background-image: url("../images/Step 3 image_min.png");
+  }
+  .meetPartner {
+    width: 320px;
+    height: 1050px;
+    margin-bottom: 35px;
+  }
+  .meetPartner__persons {
+    width: 320px;
+    height: 950px;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .meetPartner__title {
+    margin-bottom: 0;
+  }
+  .meetPartner__button {
+    width: 280px;
+    margin: 0 auto;
+  }
+  .meetPartner__firstPerson, .meetPartner__secondPerson, .meetPartner__thirdPerson, .meetPartner__fourthPerson {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin-top: 15px;
+  }
+  .meetPartner__secondPerson {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .meetPartner__thirdPerson {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .meetPartner__fourthPerson {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  .ideas {
+    width: 320px;
+  }
+  .ideas__title {
+    width: 280px;
+    margin: 0 auto;
+    margin-bottom: 33px;
+  }
+  .ideas__photoBlock {
+    width: 300px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .ideas__sport, .ideas__health, .ideas__extreme, .ideas__games, .ideas__travel {
+    width: 300px;
+    height: 120px;
+    background-color: #FFFFFF;
+    background-image: url("../images/Sport_min.png");
+  }
+  .ideas__health {
+    background-image: url("../images/Health_min.png");
+  }
+  .ideas__extreme {
+    background-image: url("../images/Extreme_min.png");
+  }
+  .ideas__games {
+    background-image: url("../images/Games_min.png");
+  }
+  .ideas__culture, .ideas__relax {
+    width: 300px;
+    height: 120px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    background-image: url("../images/Culture_min.png");
+  }
+  .ideas__relax {
+    width: 300px;
+    height: 120px;
+    background-color: #FFFFFF;
+    background-image: url("../images/Relax_min.png");
+  }
+  .ideas__travel {
+    background-image: url("../images/Travel_min.png");
+  }
+  .interests {
+    width: 320px;
+    height: auto;
+    margin: 35px auto;
+    margin-bottom: 40px;
+  }
+  .interests__title {
+    width: 280px;
+    line-height: 26px;
+    margin: 10px auto;
+  }
+  .interests__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0 auto;
+    width: 280px;
+    height: 90px;
+    margin-top: 15px;
+  }
+  .interests__textInput {
+    width: 280px;
+    margin-bottom: 10px;
+  }
+  .interests__button {
+    width: 280px;
+    height: 40px;
+    margin: 0;
+  }
+  .footerContent {
+    width: 320px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 20px;
+  }
+  .footerContent__menu {
+    width: 180px;
+    text-align: center;
+  }
+  .footerContent__menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footerContent__designBy {
+    text-align: center;
+  }
+  .footerContent__designLogo {
+    margin-bottom: 22px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

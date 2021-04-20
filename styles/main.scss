@@ -1,0 +1,636 @@
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/mixins';
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto/Roboto-Light.ttf');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+}
+
+
+.header{
+    @include box(100%, 700px, $main-text-color);
+    background: {
+        image: url('../images/Background.png');
+        size: cover;
+        position: center;
+    }
+    font-family: 'Montserrat';
+    color: $main-text-color;
+}
+
+
+.logo{
+    @include flexs(flex, space-between, none);
+    width: 945px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-right: 45px;
+    &__name h2{
+        margin-top: 6px;
+        font-size: 20px;
+    }
+    &__entrance input{
+        @include box(90px, 36px, rgba(255, 255, 255, 0));
+        @include fonts('Montserrat-Regular', 14px);
+        border-radius: 40px;
+        color: $main-text-color;
+    }
+    &__logIn{
+        border: none;
+    }
+    &__signUp_active{
+        border: 2px solid $main-text-color;
+    }
+}
+
+
+.mainInformation{
+    @include box(470px, auto, rgba(255, 255, 255, 0));
+    margin: 143px auto;
+    text-align: center;
+    &__mainText{
+        font-size: 52px;
+        line-height: 66px
+    }
+    &__secondText{
+        @include fonts('Roboto', 24px);
+        margin: {
+            top: 29px;
+            bottom: 33px;
+        }
+    }
+    &__button{
+        @include box(225px, 40px, $button-color);
+        @include fonts('Montserrat', 14px);
+        border: none;
+        border-radius: 40px;
+        color: $main-text-color;
+        cursor: pointer;
+    }
+}
+
+
+.howItWorks{
+    @include box(940px, 461px, $main-text-color);
+    margin: 93px auto;
+    &__title{
+        @include fonts('Montserrat', 26px);
+        color: $title-text-color;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    &__steps{
+        @include flexs(flex, space-between, none);
+    }
+    &__firstStep{
+        @include box(300px, 400px, $main-text-color);
+        @include flexs(flex, flex-end, none);
+        flex-direction: column;
+        padding: 19px 25px;
+        border-radius: 5px;
+        background: {
+            image: url('../images/Step\ 1\ image.png');
+            size: cover;
+        }
+    }
+    &__secondStep{
+        @extend .howItWorks__firstStep;
+        background: {
+            image: url('../images/Step\ 2\ image.png');
+            size: cover;
+            position: center;
+        }
+    }
+    &__thirdStep{
+        @extend .howItWorks__firstStep;
+        background: {
+            image: url('../images/Step\ 3\ image.png');
+            size: cover;
+            position: center;
+        }
+    }
+    &__titleStep{
+        @include box(70px, 20px, $button-color);
+        @include fonts('Montserrat-Regular', 10px);
+        @include flexs(flex, center, center);
+        border-radius: 40px;
+        color: $main-text-color;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+    }
+    &__titleTextStep{
+        @include fonts('Montserrat', 24px);
+        color: $main-text-color;
+        margin-bottom: 27px;
+    }
+    &__mainTextStep{
+        @include fonts('Roboto', 14px);
+        color: #E3E3E3;
+        line-height: 14px;
+    }
+}
+
+
+.meetPartner{
+    @include box(940px, 461px, $main-text-color);
+    margin: 0 auto;
+    &__title{
+        @extend .howItWorks__title;
+    }
+    &__persons{
+        @include flexs(flex, space-between, none);
+    }
+    &__hobby{
+        @include box(40px, 40px, $button-color);
+        @include flexs(flex, center, center);
+        border-radius: 50%;
+        border: 5px solid $main-text-color;
+        font-size: 20px;
+        color: $main-text-color;
+        margin: -35px -90px 0 0;
+    }
+    &__name{
+        @include fonts('Montserrat', 14px);
+        color: $title-text-color;
+        margin-top: 15px;
+        margin-bottom: 25px;
+    }
+    &__aboutPerson{
+        @include fonts('Roboto', 14px);
+        color: $text-color;
+        text-align: center;
+    }
+
+    &__firstPerson{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 221px;
+        margin-top: 5px;
+    }
+    &__secondPerson{
+        @extend .meetPartner__firstPerson;
+        div{
+            background-color: #19D4CA;
+        }
+    }
+    &__thirdPerson{
+        @extend .meetPartner__firstPerson;
+        div{
+            background-color: #FFA710;
+            ;
+        }
+    }
+    &__fourthPerson{
+        @extend .meetPartner__firstPerson;
+        div{
+            background-color: #667DF3;
+            ;
+        }
+    }
+
+    &__firstPersonPhoto{
+        @include box(120px, 120px, $main-text-color);
+        border-radius: 50%;
+        background: {
+            image: url('../images/Bitmap1.png');
+            size: cover;
+            position: center;
+        }
+    }
+    &__secondPersonPhoto{
+        @extend .meetPartner__firstPersonPhoto;
+        background-image: url('../images/Bitmap2.png');
+    }
+    &__thirdPersonPhoto{
+        @extend .meetPartner__firstPersonPhoto;
+        background-image: url('../images/Bitmap3.png');
+    }
+    &__fourthPersonPhoto{
+        @extend .meetPartner__firstPersonPhoto;
+        background-image: url('../images/Bitmap4.png');
+    }
+
+    &__button{
+        @include box(180px, 40px, $main-text-color);
+        @include fonts('Montserrat', 14px);
+        display: block;
+        color: $button-color;
+        border: 2px solid $button-color;
+        border-radius: 40px;
+        margin: 40px auto;
+        cursor: pointer;
+    }
+}
+
+
+.ideas{
+    @include box(940px, 1031px, $main-text-color);
+    margin: 0 auto;
+    &__photoBlock{
+        @include flexs(flex, space-between, start);
+        @include fonts('Montserrat', 22px);
+        flex-wrap: wrap;
+        color: $main-text-color;
+    }
+    &__title{
+        @extend .howItWorks__title;
+    }
+    &__sport{
+        @include box(300px, 310px, $main-text-color);
+        @include flexs(flex, center, center);
+        border-radius: 5px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        background: {
+            image: url('../images/Sport.png');
+            size: cover;
+            position: center;
+        }
+    }
+    &__health{
+        @extend .ideas__sport;
+        background-image: url('../images/Health.png');
+    }
+    &__extreme{
+        @extend .ideas__sport;
+        background-image: url('../images/Extreme.png');
+    }
+    &__games{
+        @extend .ideas__sport;
+        background-image: url('../images/Games.png');
+    }
+    &__culture{
+        @include box(620px, 310px, $main-text-color);
+        @include flexs(flex, center, center);
+        border-radius: 5px;
+        cursor: pointer;
+        background-image: url('../images/Culture.png');
+    }
+    &__relax{
+        @extend .ideas__culture;
+        background-image: url('../images/Relax.png');
+    }
+    &__travel{
+        @extend .ideas__sport;
+        background-image: url('../images/Travelling.png');
+    }
+}
+
+.interests{
+    @include box(482px, 148px, $main-text-color);
+    margin: 95px auto;
+    margin-bottom: 110px;
+    &__title{
+        @extend .howItWorks__title;
+        margin-bottom: 50px;
+    }
+    &__question{
+        @include fonts('Roboto', 18px);
+        text-align: center;
+        color: $text-color;
+        margin-bottom: 25px;
+    }
+    &__textInput{
+        @include box(299px, 40px, $main-text-color);
+        border: 1px solid #D4D4D4;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+        border-radius: 3px;
+        padding-left: 14px;
+    }
+    &__textInput::placeholder{
+        @include fonts('Roboto', 14px);
+        color: #999999;
+    }
+    &__button{
+        @include box(172px, 40px, $button-color);
+        @include fonts('Montserrat', 14px);
+        color: $main-text-color;
+        border-radius: 40px;
+        border: none;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+}
+
+
+.footer{
+    border-top: 2px solid $button-color;
+    @include fonts('Montserrat', 14px);
+}
+
+.footerContent{
+    @include box(945px, 260px, $main-text-color);
+    @include flexs(flex, space-between, start);
+    margin: 0 auto;
+    padding-top: 38px;
+    &__logo{
+        @include fonts('Montserrat-Regular', 16px);
+        color: $button-color;
+    }
+    &__menuList{
+        @include fonts('Roboto', 14px);
+        line-height: 26px;
+        margin-top: 15px;
+    }
+    &__partners{
+        margin-right: 170px;
+    }
+    &__designBy{
+        @include fonts('Montserrat', 10px);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 12px;
+        color: #CCCCCC;
+        text-align: right;
+    }
+    &__designLogo{
+        margin-top: 7px;
+    }
+}
+
+ul a{
+    text-decoration: none;
+    color: #999999;
+}
+
+
+@media screen and (max-width: 768px){
+    .logo{
+        width: 680px;
+        padding-right: 0;
+    }
+
+    .howItWorks{
+        width: 748px;
+        &__title{
+            font-size: 22px;
+        }
+        &__firstStep{
+            width: 236px;
+            padding: 20px;
+        }
+        &__firstStep &__titleStep{
+            margin-bottom: 44px;
+        }
+        &__firstStep &__titleTextStep{
+            margin-bottom: 28px;
+        }
+        &__secondStep &__titleStep{
+            margin-bottom: 15px;
+        }
+        &__secondStep &__titleTextStep{
+            margin-bottom: 10px;
+        }
+        &__thirdStep &__titleStep{
+            margin-bottom: 44px;
+        }
+        &__thirdStep &__titleTextStep{
+            margin-bottom: 30px;
+        }
+    }
+
+    .meetPartner{
+        width: 492px;
+        height: 605px;
+        margin-bottom: 95px;
+        &__persons{
+            height: 470px;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        &__firstPerson{
+            width: 236px;
+        }
+        p{
+            width: 236px;
+        }
+    }
+
+    .ideas{
+        width: 100%;
+        &__sport{
+            width: 236px;
+            a{
+                width: 206px;
+                text-align: center;
+            }
+        }
+        &__photoBlock{
+            width: 748px;
+            margin: 0 auto;
+        }
+        &__culture{
+            width: 492px;
+        }
+        &__travel{
+            background-position: left;
+        }
+    }
+
+    .footerContent{
+        width: 690px;
+        &__partners{
+            margin-right: 0px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 426px){
+    .header{
+        height: 540px;
+    }
+
+    .logo{
+        width: 200px;
+        flex-direction: column-reverse;
+        align-content: center;
+        padding-top: 20px;
+        &__entrance{
+            margin-bottom: 97px;
+        }
+        &__name{
+            margin: 0 auto;
+        }
+    }
+
+    .mainInformation{
+        width: 281px;
+        margin: 26px auto;
+        &__mainText{
+            width: 272px;
+            font-size: 30px;
+            line-height: 36px;
+            margin: 0 auto;
+        }
+        &__secondText{
+            width: 280px;
+            font-size: 18px;
+            line-height: 24px;
+            margin: 0 auto;
+        }
+        &__button{
+            width: 280px;
+            margin-top: 15px;
+        }
+    }
+
+    .howItWorks{
+        width: 320px;
+        height: 780px;
+        margin: 35px auto;
+        &__title{
+            margin-bottom: 15px;
+        }
+        &__steps{
+            height: 735px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &__firstStep{
+            @include box(300px, 240px, $main-text-color);
+            background-image: url('../images/Step\ 1\ image_min.png');
+            padding: 20px 30px 16px 20px;
+        }
+        &__secondStep{
+            background-image: url('../images/Step\ 2\ image_min.png');
+        }
+        &__thirdStep{
+            background-image: url('../images/Step\ 3\ image_min.png');
+        }
+    }
+
+    .meetPartner{
+        width: 320px;
+        height: 1050px;
+        margin-bottom: 35px;
+        &__persons{
+            width: 320px;
+            height: 950px;
+            align-content: center;
+            justify-content: flex-start;
+        }
+        &__title{
+            margin-bottom: 0;
+        }
+        &__button{
+            width: 280px;
+            margin: 0 auto;
+        }
+        &__firstPerson{
+            order: 1;
+            margin-top: 15px;
+        }
+        &__secondPerson{
+            order: 3;
+        }
+        &__thirdPerson{
+            order: 2;
+        }
+        &__fourthPerson{
+            order: 4;
+        }
+    }
+
+    .ideas{
+        width: 320px;
+        &__title{
+            width: 280px;
+            margin: 0 auto;
+            margin-bottom: 33px;
+        }
+        &__photoBlock{
+            width: 300px;
+            justify-content: center
+        }
+        &__sport{
+            @include box(300px, 120px, $main-text-color);
+            background-image: url('../images/Sport_min.png');
+        }
+        &__health{
+            background-image: url('../images/Health_min.png');
+        }
+        &__extreme{
+            background-image: url('../images/Extreme_min.png');
+        }
+        &__games{
+            background-image: url('../images/Games_min.png');
+        }
+        &__culture{
+            @include box(300px, 120px, $main-text-color);
+            margin-bottom: 20px;
+            background-image: url('../images/Culture_min.png');
+        }
+        &__relax{
+            @include box(300px, 120px, $main-text-color);
+            background-image: url('../images/Relax_min.png');
+        }
+        &__travel{
+            background-image: url('../images/Travel_min.png');
+        }
+    }
+
+    .interests{
+        width: 320px;
+        height: auto;
+        margin: 35px auto;
+        margin-bottom: 40px;
+        &__title{
+            width: 280px;
+            line-height: 26px;
+            margin: 10px auto;
+        }
+        &__form{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 280px;
+            height: 90px;
+            margin-top: 15px;
+        }
+        &__textInput{
+            width: 280px;
+            margin-bottom: 10px;
+        }
+        &__button{
+            width: 280px;
+            height: 40px;
+            margin: 0;
+        }
+    }
+
+    .footerContent{
+        width: 320px;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        &__menu{
+            width: 180px;
+            text-align: center;
+        }
+        &__menu ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        &__designBy{
+            text-align: center;
+        }
+        &__designLogo{
+            margin-bottom: 22px
+        }
+    }
+}

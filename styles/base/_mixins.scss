@@ -1,0 +1,16 @@
+@mixin box($w, $h, $c) {
+    width: $w;
+    height: $h;
+    background-color: $c;
+}
+
+@mixin  flexs($d, $jc, $a) {
+    display: $d;
+    justify-content: $jc;
+    align-items: $a;
+}
+
+@mixin fonts ($f, $s) {
+    font-family: $f;
+    font-size: $s;
+}
